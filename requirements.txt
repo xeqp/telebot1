@@ -1,0 +1,5 @@
+aiogram
+pydantic-settings
+openai == 0.28.0
+python-dotenv
+gtts
