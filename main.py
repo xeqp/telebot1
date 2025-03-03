@@ -26,11 +26,11 @@ openai.api_key = settings.OPENAI_API_KEY
 
 
 async def start_handler(message: Message):
-    await message.answer("Привет! Отправьте мне голосовое сообщение, и я его обработаю.")
+    await message.answer("Отправьте мне голосовое сообщение")
 
 async def voice_message_handler(message: Message):
     if not message.voice:
-        await message.answer("Пожалуйста, отправьте голосовое сообщение.")
+        await message.answer("отправьте голосовое сообщение.")
         return
 
     voice = message.voice
@@ -65,7 +65,7 @@ async def voice_message_handler(message: Message):
 
     except Exception as e:
         logging.error(f"Ошибка при обработке голосового сообщения: {e}")
-        await message.answer("Произошла ошибка при обработке вашего сообщения. Попробуйте ещё раз.")
+        await message.answer("Произошла ошибка при обработке вашего сообщения.")
 
     finally:
         if os.path.exists(temp_file_path):
